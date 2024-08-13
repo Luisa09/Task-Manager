@@ -1,27 +1,37 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Test Case
-|--------------------------------------------------------------------------
-|
-| The closure you provide to your test functions is always bound to a specific PHPUnit test
-| case class. By default, that class is "PHPUnit\Framework\TestCase". Of course, you may
-| need to change it using the "uses()" function to bind a different classes or traits.
+<?php
+//Pruebas de Creación de Tareas
+
+
+test('a task can be created', function () {
+    $task = new Task('Nueva tarea', '2024-08-12', 'pending');
+    expect($task)->toBeInstanceOf(Task::class);
+    expect($task->title)->toBe('Nueva tarea');
+    expect($task->due_date)->toBe('2024-08-12');
+    expect($task->status)->toBe('pending');
+});
+
+
 |
 */
 
 // uses(Tests\TestCase::class)->in('Feature');
 
 /*
-|--------------------------------------------------------------------------
-| Expectations
-|--------------------------------------------------------------------------
-|
-| When you're writing tests, you often need to check that values meet certain conditions. The
-| "expect()" function gives you access to a set of "expectations" methods that you can use
-| to assert different things. Of course, you may extend the Expectation API at any time.
-|
+//Pruebas de Validación
+
+
+test('an exception is thrown if title is empty', function () {
+    expect(fn() => new Task('', '2024-08-15', 'pending'))
+        ->toThrow(InvalidArgumentException::class, 'Title is required');
+});
+
+test('an exception is thrown if due date is in the past', function () {
+    expect(fn() => new Task('Task 1', '2020-01-01', 'pending'))
+        ->toThrow(InvalidArgumentException::class, 'Due date cannot be in the past');
+});
 */
 
 expect()->extend('toBeOne', function () {

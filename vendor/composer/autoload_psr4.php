@@ -33,4 +33,5 @@ return array(
     'Fidry\\CpuCoreCounter\\' => array($vendorDir . '/fidry/cpu-core-counter/src'),
     'Doctrine\\Deprecations\\' => array($vendorDir . '/doctrine/deprecations/lib/Doctrine/Deprecations'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'App\\' => array($baseDir . '/src'),
 );

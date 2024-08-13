@@ -1,18 +1,14 @@
 <?php
+use App\Models\Task;
+//Pruebas de Validación
 
-use PHPUnit\Framework\TestCase;
 
-class TaskTest extends TestCase
-{
-    public function testExample()
-    {
-        $this->assertTrue(true);
-    }
+test('an exception is thrown if title is empty', function () {
+    expect(fn() => new Task('', '2024-08-15', 'pending'))
+        ->toThrow(InvalidArgumentException::class, 'Title is required');
+});
 
-    public function testTaskCreation()
-    {
-        $task = new Task("Título de prueba", "Descripción de prueba");
-        $this->assertEquals("Título de prueba", $task->getTitle());
-        $this->assertEquals("Descripción de prueba", $task->getDescription());
-    }
-}
+test('an exception is thrown if due date is in the past', function () {
+    expect(fn() => new Task('Task 1', '2020-01-01', 'pending'))
+        ->toThrow(InvalidArgumentException::class, 'Due date cannot be in the past');
+});

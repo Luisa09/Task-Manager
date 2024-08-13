@@ -46,6 +46,9 @@ class BuilderFactory {
         return new Builder\Class_($name);
     }
 
+    public function class(string $Task): Builder\Class_ {
+        return new Builder\Class_($Task);
+    }
     /**
      * Creates an interface builder.
      *

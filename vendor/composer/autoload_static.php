@@ -77,6 +77,10 @@ class ComposerStaticInitcadd5573984e3854ca0455d897e92dfa
             'Doctrine\\Deprecations\\' => 22,
             'DeepCopy\\' => 9,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -189,6 +193,10 @@ class ComposerStaticInitcadd5573984e3854ca0455d897e92dfa
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
